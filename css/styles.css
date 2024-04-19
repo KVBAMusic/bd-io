@@ -1,0 +1,114 @@
+:root {
+    --bg-color-start: #00aaaa;
+    --bg-color-end: #55ffff;
+    --link-select: #008888;
+    --navbar-bg: #224444;
+    --input-border: #00a0a080;
+}
+
+body {
+    animation: bg-color-change 10s ease infinite;
+    margin: 0;
+}
+
+@keyframes bg-color-change {
+    from {background-color: var(--bg-color-start);}
+    50%  {background-color: var(--bg-color-end);}
+    to   {background-color: var(--bg-color-start);}
+}
+
+.container {
+    width: 30%;
+    padding: 1%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+p, label, a, span, #login-title {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+    width: 98%;
+    border-color: var(--input-border);
+    border-radius: 5px;
+}
+
+#login-text {
+    display: block;
+    font-size: .5cm;
+    margin-top: 5%;
+    padding: .25cm;
+    transition: color 0.25s ease-in-out, 
+                background-color 0.25s ease-in-out;
+    background-color: #00000000;
+    border-width: 4px;
+    border-color: #448888;
+    border-style: solid;
+    border-radius: 10px;
+}
+
+#login-text:hover {
+    color: var(--link-select);
+    background-color: #ffffff40;
+}
+
+nav {
+    display: flex;
+    position: fixed;
+    align-items: stretch;
+    margin: 0;
+    width: 100%;
+    height: fit-content;
+    background-color: var(--navbar-bg);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.nav-elem {
+    display: table-cell;
+    float: left;
+    overflow: hidden;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: .5cm;
+    color: white;
+}
+
+.nav-elem:hover {
+    background-color: #ffffff40;
+}
+
+.nav-left {
+    float: left;
+}
+
+.nav-right {
+    float: right;
+}
+
+.nav-container {
+    overflow: hidden;
+    width: 2000px;
+}
+
+.nav-filler {
+    overflow: hidden;
+    display: table-cell;
+    width: fit-content;
+}
+
+footer {
+    position: fixed;
+    display: flexbox;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: .3cm;
+    background-color: var(--navbar-bg);
+    color: white
+}
