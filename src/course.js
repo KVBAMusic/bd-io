@@ -1,12 +1,19 @@
 let input = ""
 let lastTimestamp, startTimestamp = -1
 const inputId = "course-input"
+let score = 0
 
 window.onload = () => {
+    //TODO:
+    // - fetch words from DB
+    // - pick a number of random ones
+    // - game start sequence with a different listener function
     alert("dupa")
 }
 
-document.addEventListener('keydown', function (event) {
+document.addEventListener('keydown', onScreenInput, true)
+
+function onScreenInput(event) {
     switch (event.key) {
         case "Shift":      case "Alt":        case "Control":   case "Escape":
         case "CapsLock":   case "ArrowUp":    case "ArrowDown": case "F8":
@@ -21,11 +28,17 @@ document.addEventListener('keydown', function (event) {
             input += '\t'
             break
         case "Enter":
-            // check if correct
+            // TODO:
+            // - game over logic
+            validate()
+            input = " "
             break
         case "Backspace":
         case "Delete":
             input = input.substring(0, input.length - 1)
+            if (input === "") {
+                input = " "
+            }
             break
         case "Dead":
             input += "~"
@@ -35,14 +48,19 @@ document.addEventListener('keydown', function (event) {
             break;
     }
     document.getElementById(inputId).innerHTML = input
-}, true)
+}
 
+function validate() {
+    // TODO:
+    // - check if correct
+    score += 1
+    document.getElementById("course-score-counter").innerHTML = score + "/10"
+}
 
 function frame(timestamp, duration) {
     if (startTimestamp == -1) {
         startTimestamp = timestamp
     }
-    let delta = timestamp - last
     last = timestamp
     let t = (timestamp - startTimestamp) / duration
 
@@ -52,4 +70,3 @@ function frame(timestamp, duration) {
 }
 
 window.requestAnimationFrame((timestamp) => frame(timestamp, 1000))
-
