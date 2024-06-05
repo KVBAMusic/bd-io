@@ -1,0 +1,137 @@
+:root {
+    --col-main: #BDFCC9;
+    --col-aux: #F0F8FF;
+    --col-accent: #61e49a;
+    --col-accent-light:#38a567;
+    --bg-color-start: #00aaaa;
+    --bg-color-end: #55ffff;
+    --link-select: #008888;
+    --navbar-bg: #224444;
+    --input-border: #00a0a080;
+}
+
+body {
+    background-color: var(--col-main);
+    margin: 0;
+}
+
+.login-container {
+    width: 30%;
+    padding: 1%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+p, label, a, span, #login-title {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+    width: 98%;
+    border-color: var(--col-accent-light);
+    border-radius: 5px;
+}
+
+#login-text {
+    display: block;
+    font-size: .5cm;
+    margin-top: 5%;
+    padding: .25cm;
+    transition: color 0.25s ease-in-out, 
+                background-color 0.25s ease-in-out;
+    background-color: #00000000;
+    border-width: 4px;
+    border-color: var(--col-accent);
+    border-style: solid;
+    border-radius: 10px;
+}
+
+#login-text:hover {
+    color: var(--col-accent);
+    background-color: #ffffff40;
+}
+
+nav {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+    height: fit-content;
+    background-color: var(--col-accent);
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 -6px 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+.nav-img, .nav-elem {
+    position: relative;
+    align-items: stretch;
+    display: table-cell;
+    float: left;
+    overflow: hidden;
+    font-size: large;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: white;
+}
+
+.nav-img {
+    max-height: 2.13cm;
+    max-width: 10cm;
+    height: auto;
+    width: auto;
+    display: flex;
+}
+
+.nav-elem {
+    height: 100%;
+    padding: .8cm;
+}
+
+.nav-elem:hover {
+    background-color: #ffffff40;
+}
+
+.nav-left {
+    float: left;
+}
+
+.nav-right {
+    float: right;
+}
+
+.nav-container {
+    overflow: hidden;
+    width: 2000px;
+}
+
+.nav-filler {
+    overflow: hidden;
+    display: table-cell;
+    width: fit-content;
+}
+
+footer {
+    position: fixed;
+    display: flexbox;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: .3cm;
+    background-color: var(--col-accent);
+    color: white;
+    box-shadow: 0 6px 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+#course-input {
+    font-size: xx-large;
+}
+
+.course-container {
+    align-content: center;
+}
