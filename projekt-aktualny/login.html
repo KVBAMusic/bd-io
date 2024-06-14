@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Zaloguj się - Lingsen</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css" /> 
+</head>
+<body>
+  <script src="src/login.js"></script>
+  <nav>
+    <div class="nav-container">
+      <span class="nav-img nav-left" onclick="window.open('index.html', '_self')">
+        <img src="res/Lingsen.png" height="82">
+      </span>
+      <span class="nav-elem nav-right" onclick="window.open('login.html', '_self')">Zarejestruj się</span>
+      <span class="nav-elem nav-right" onclick="window.open('login.html', '_self')">Zaloguj się</span>
+    </div>
+  </nav>
+  <div class="login-container"> <!-- log in form, sits nicely in the middle -->
+    <div align="center">
+      <h1 id="login-title">Zaloguj się do serwisu</h1>
+      <hr>
+      <div align="left">
+        <form align="">
+          <label for="login-input"><b>Nazwa użytkownika</b></label><br>
+          <input type="text" id="login-input"><br>
+          <label for="password-input"><b>Hasło</b></label><br>
+          <input type="password" id="password-input"><br>
+        </form>
+      </div>
+      <button onclick="return login('login-input', 'password-input')" id="login-text"><i>Zaloguj się</i></button>
+      <p id="login-pass-output"> </p>
+    </div>
+  </div>
+  <footer>
+    tu idzie stopka strony idk
+  </footer>
+</body>
+</html>
