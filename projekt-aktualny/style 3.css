@@ -12,9 +12,49 @@ body {
   justify-content: space-between;
   background-color: #61e49a;
   padding: 20px;
-  margin-bottom: 50px;
 }
 
+.main-page-part {
+  height: 650px; /* Adjust height as needed */
+  width: auto;
+  background: url('bg-img.png') no-repeat center center; /* Set background image */
+  background-size: cover; /* Cover the entire div */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #555; /* Make text color white */
+  /*text-shadow: 2px 2px 5px rgb(13, 66, 9);*/
+  text-align: left; 
+  padding: 20px; 
+  box-sizing: border-box; 
+}
+
+.text-content {
+  position: relative;
+  z-index: 2; /* Ensure text is above background */
+  padding: 20px;
+  margin: -30px 0 0 -800px; /* Adjust top and left margin to position the text precisely */
+  max-width: 600px; /* Optional: Limit the width of the text content */
+  font-family: "Oswald", sans-serif;
+  font-size: 28px;
+}
+
+.start-today-button {
+  display: block;
+  width: 200px;
+  height: 60px;
+  background-color: #61e49a;
+  color: #21663f;
+  border: none;
+  border-radius: 30px;
+  text-align: center;
+  line-height: 55px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 20px auto;
+}
 #logo {
   margin-right: auto;
 }
