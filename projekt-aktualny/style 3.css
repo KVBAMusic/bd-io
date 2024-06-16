@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Zapewnia, że body zajmuje co najmniej 100% wysokości okna przeglądarki */
+  background-color: #BDFCC9;
+}
+
+.upper-page-part {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #61e49a;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+
+#logo {
+  margin-right: auto;
+}
+
+input, select {
+  display: block;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.buttons {
+  margin-right: 20px;
+}
+
+::placeholder {
+  color: #21663f;
+  text-align: center;
+}
+
+input, select, button {
+  width: 200px;
+  height: 70px;
+  border-radius: 70px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  outline: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: #21663f;
+  align-items: center;
+}
+
+input, select, #confirm {
+  width: 500px;
+  -moz-appearance: none; /* Usuwa standardowy wygląd przeglądarek Firefox */
+  -webkit-appearance: none; /* Usuwa standardowy wygląd przeglądarek Webkit */
+  appearance: none; /* Usuwa standardowy wygląd wszystkich przeglądarek */
+  text-align-last: center; /* Centruje tekst w selekcie dla przeglądarek obsługujących */
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  text-align: center;
+  align-items: center;
+}
+
+#confirm {
+  background-color: #21663f;
+  color: #BDFCC9;
+}
+
+.why-us, .faq, .contact {
+  font-size: 18px;
+}
+
+#ig-icon {
+  height: 60px;
+  margin-right: 20px;
+}
+
+#mail-icon {
+  height: 60px;
+}
+
+.contact {
+  background-color: #61e49a;
+  padding: 10px;
+  margin-top: auto; /* Sprawia, że .contact przesuwa się na dół */
+  color: #21663f;
+  font-size: 25px;
+}
+
+#contact-tittle, .input-data {
+  display: grid;
+  grid-template-columns: auto;
+  justify-content: center;
+  text-align: center;
+  color: #21663f;
+}
+
+.inside-contact {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+}
+
+select option[disabled] {
+  color: #aaa; /* Kolor wstępnie wyświetlanej opcji */
+}
+
+/* Specjalne style dla Safari */
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    select {
+      text-align: left; /* Resetuje domyślne wyrównanie w Safari */
+      padding-left: calc(50% - 50px); /* Dopasuj wartość, aby wyśrodkować tekst w Safari */
+    }
+  }
+}
