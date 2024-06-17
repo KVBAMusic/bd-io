@@ -110,7 +110,10 @@ function getnextword() {
         category: "",
     }
     fetch("localhost:8000/get_word", {
-        method: "GET"
+        method: "GET",
+        body: JSON.stringify({
+            id: localStorage.getItem("userID")
+        })
     })
     .then(response => {
         return response.json()
