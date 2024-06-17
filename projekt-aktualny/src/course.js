@@ -116,12 +116,23 @@ function getnextword() {
         })
     })
     .then(response => {
-        return response.json()
+        if (response.ok) {
+            return response.json()
+        }
+        return null
     })
     .then(json => {
+        if (json === null) {
+            return
+        }
+        // alert(json)
+        // return
         word.word = json.word
         word.translation = json.translation
         word.category = json.category
+    })
+    .catch(err => {
+        alert(err)
     })
     return word
 }
