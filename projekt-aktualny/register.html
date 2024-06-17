@@ -8,6 +8,7 @@
 </head>
 
 <body>
+  <script src="src/login.js"></script>
     <div class="upper-page-part">
       <img id="logo" src="./res/Lingsen.png" alt="Logo LingSen" height="82">
       <a href="./login.html"><button class="buttons">Zaloguj się</button></a>
@@ -16,22 +17,17 @@
 
     <div class="input-data">
         <h1>Załóż konto</h1>
-        <input type="text" type="hidden" placeholder="Imię">
-        <input type="email" placeholder="Adres e-mail">
-        <input type="password" placeholder="Hasło">
+        <input type="text" type="hidden" placeholder="Imię" id="register-username">
+        <input type="email" placeholder="Adres e-mail" id="register-email">
+        <input type="password" placeholder="Hasło" id="register-password">
         <select>
             <option value="level-of-advancement" disabled selected>Poziom zaawansowania</option>
             <option>początkujący</option>
             <option>średniozaawansowany</option>
             <option>zaawansowany</option>
         </select>
-        <button id="confirm">Potwierdź</button>
-    </div>
-
-    
-
-
-   
+        <button id="confirm" onclick="register('register-username', 'register-email', 'register-password')">Potwierdź</button>
+    </div>   
 
     <div class="contact">
       <h3 id="contact-tittle">Kontakt</h3>
