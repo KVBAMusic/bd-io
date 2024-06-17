@@ -16,7 +16,7 @@ document.addEventListener('keydown', start, true)
 function start(event) {
     if (event.key == "Enter") {
         roundCounter = 0
-        words = [...getwords(10)]
+        words = Array.fromAsync(getwords(10)).then(arr => arr)
         // words = [...getdebugwords()]
         score = 0
         numwords = words.length
@@ -87,10 +87,10 @@ function course(event) {
     document.getElementById(inputId).innerHTML = input
 }
 
-function* getwords(numwords) {
+async function* getwords(numwords) {
     let i = 0
     while (i < numwords) {
-        yield getnextword()
+        yield await getnextword()
         i += 1
     }
 }
@@ -103,38 +103,39 @@ function* getdebugwords() {
     }
 }
 
-function getnextword() {
+async function getnextword() {
     let word = {
         word: "",
         translation: "",
         category: "",
     }
     let id = localStorage.getItem("userID")
-    fetch("localhost:8000/get_word", {
+    const response = await fetch("localhost:8000/get_word", {
         method: "POST",
         body: JSON.stringify({
             id: id
         })
     })
-    .then(response => {
-        if (response.ok) {
-            return response.json()
-        }
-        return null
-    })
-    .then(json => {
-        if (json === null) {
-            return
-        }
-        // alert(json)
-        // return
+    console.log(response)
+    if (response.ok) {
+        var json = await response.json()
+        console.log(json)
         word.word = json.word
         word.translation = json.translation
         word.category = json.category
-    })
-    .catch(err => {
-        alert(err)
-    })
+    }
+    
+    // .then(json => {
+    //     if (json === null) {
+    //         return
+    //     }
+    //     // alert(json)
+    //     // return
+        
+    // })
+    // .catch(err => {
+    //     alert(err)
+    // })
     return word
 }
 
