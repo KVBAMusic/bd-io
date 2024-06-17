@@ -8,11 +8,11 @@
   <script src="src/login.js"></script>
   <nav>
     <div class="nav-container">
-      <span class="nav-img nav-left" onclick="window.open('index.html', '_self')">
+      <div class="nav-img nav-left" onclick="window.open('index.html', '_self')">
         <img src="res/Lingsen.png" height="82">
-      </span>
-      <span class="nav-elem nav-right" onclick="window.open('login.html', '_self')">Zarejestruj się</span>
-      <span class="nav-elem nav-right" onclick="window.open('login.html', '_self')">Zaloguj się</span>
+      </div>
+      <button class="nav-elem nav-right nav-btn" onclick="window.open('register.html', '_self')">Dołącz teraz!</button>
+      <button class="nav-elem nav-right nav-btn" onclick="window.open('login.html', '_self')">Zaloguj się</button>
     </div>
   </nav>
   <div class="login-container"> <!-- log in form, sits nicely in the middle -->
@@ -20,19 +20,21 @@
       <h1 id="login-title">Zaloguj się do serwisu</h1>
       <hr>
       <div align="left">
-        <form align="">
-          <label for="login-input"><b>Nazwa użytkownika</b></label><br>
-          <input type="text" id="login-input"><br>
-          <label for="password-input"><b>Hasło</b></label><br>
-          <input type="password" id="password-input"><br>
-        </form>
+        <div align="center">
+          <input type="text" id="login-input" placeholder="Nazwa użytkownika"><br>
+          <input type="password" id="password-input" placeholder="Hasło"><br>
+        </div>
       </div>
-      <button onclick="return login('login-input', 'password-input')" id="login-text"><i>Zaloguj się</i></button>
+      <button onclick="login('login-input', 'password-input')" id="login-text">Zaloguj się</button>
       <p id="login-pass-output"> </p>
     </div>
   </div>
   <footer>
-    tu idzie stopka strony idk
+    <h3 id="contact-tittle">Kontakt</h3>
+      <div class="inside-contact">
+        <a href="https://www.instagram.com/jacek_strojny/"><img  id="ig-icon" src="Projekt bez nazwy_preview_rev_1.png" alt=""></a>
+        <a href="mailto:siurek@gmail.com"><img id="mail-icon" src="Projekt bez nazwy-kopia_preview_rev_1.png"></a>
+      </div>
   </footer>
 </body>
 </html>

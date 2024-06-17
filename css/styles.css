@@ -3,11 +3,6 @@
     --col-aux: #F0F8FF;
     --col-accent: #2E8B57;
     --col-accent-light:#38a567;
-    --bg-color-start: #00aaaa;
-    --bg-color-end: #55ffff;
-    --link-select: #008888;
-    --navbar-bg: #224444;
-    --input-border: #00a0a080;
 }
 
 body {
@@ -130,8 +125,20 @@ footer {
 
 #course-input {
     font-size: xx-large;
+    padding-top: 2cm;
 }
 
 .course-container {
     align-content: center;
+    height: 100%;
+}
+
+.course-word-display {
+    background-color: var(--col-aux);
+    height: 50%;
+    width: 80%;
+    display: block;
+    align-items: center;
+    padding: 3cm;
+    font-size: xx-large;
 }
