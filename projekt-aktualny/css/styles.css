@@ -25,7 +25,7 @@ body {
     background-color: rgba(255, 255, 255, 0.25);
 }
 
-p, label, a, span, #login-title {
+p, label, a, span, #login-title, .course-info {
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -158,8 +158,16 @@ footer {
     height: 60px;
 }
 
-#course-input {
+#course-input, .course-word {
     font-size: xx-large;
+}
+
+#course-input {
+    font-style: oblique;
+}
+
+.course-info {
+    font-size: x-large;
 }
 
 .course-container {

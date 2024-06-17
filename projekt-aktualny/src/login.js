@@ -8,8 +8,11 @@ async function login(userText, passText) {
         return
     }
     outElement.innerHTML = ""
-    // window.open("course.html", "_self")
-    // TODO: dej tu port
+    // for debug purposes
+    // let data = {id: 1234}
+    // localStorage.setItem("userID", data.id)
+    // window.open("course.html", "_self");
+    // return
     const response = await fetch("localhost:8000/login", {
         method: "POST",
         body: JSON.stringify({
@@ -21,9 +24,8 @@ async function login(userText, passText) {
         let data = await response.json()
         localStorage.setItem("userID", data.id)
         window.open("course.html", "_self");
-    }
-    else {
-        outElement.innerHTML = "Invalid credentials"
         return
     }
+    outElement.innerHTML = "Invalid credentials"
+        
 }
