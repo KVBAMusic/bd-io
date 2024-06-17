@@ -12,21 +12,18 @@ async function login(userText, passText) {
     // TODO: dej tu port
     const response = await fetch("localhost:8000/login", {
         method: "POST",
-        body: {
+        body: JSON.stringify({
             username: user,
             password: pass
-        }
+        })
     })
-    console.log(response.json())
-    if (statusOk(response)) {
+    if (response.ok) {
+        let data = await response.json()
+        localStorage.setItem("userID", data.id)
         window.open("course.html", "_self");
     }
     else {
         outElement.innerHTML = "Invalid credentials"
-        return        
+        return
     }
-}
-
-function statusOk(status) {
-    return status >= 200 && status < 300
 }
