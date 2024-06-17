@@ -3,8 +3,7 @@
     --col-aux: #F0F8FF;
     --col-accent: #61e49a;
     --col-accent-light:#38a567;
-    --bg-color-start: #00aaaa;
-    --bg-color-end: #55ffff;
+    --col-text:#21663f;
     --link-select: #008888;
     --navbar-bg: #224444;
     --input-border: #00a0a080;
@@ -13,6 +12,7 @@
 body {
     background-color: var(--col-main);
     margin: 0;
+    height: 100vh;
 }
 
 .login-container {
@@ -22,17 +22,47 @@ body {
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.25);
 }
 
 p, label, a, span, #login-title {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-input {
-    width: 98%;
-    border-color: var(--col-accent-light);
-    border-radius: 5px;
+input, select, button {
+    width: 200px;
+    height: 70px;
+    border-radius: 70px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--col-text);
+    align-items: center;
+}
+
+input, select {
+    display: block;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+input, select, #confirm {
+    width: 500px;
+    -moz-appearance: none; /* Usuwa standardowy wygląd przeglądarek Firefox */
+    -webkit-appearance: none; /* Usuwa standardowy wygląd przeglądarek Webkit */
+    appearance: none; /* Usuwa standardowy wygląd wszystkich przeglądarek */
+    text-align-last: center; /* Centruje tekst w selekcie dla przeglądarek obsługujących */
+}
+
+::placeholder {
+    color: #21663f;
+    text-align: center;
+  }
+
+select option[disabled] {
+    color: #aaa; /* Kolor wstępnie wyświetlanej opcji */
 }
 
 #login-text {
@@ -40,43 +70,29 @@ input {
     font-size: .5cm;
     margin-top: 5%;
     padding: .25cm;
-    transition: color 0.25s ease-in-out, 
-                background-color 0.25s ease-in-out;
-    background-color: #00000000;
-    border-width: 4px;
-    border-color: var(--col-accent);
-    border-style: solid;
-    border-radius: 10px;
-}
-
-#login-text:hover {
-    color: var(--col-accent);
-    background-color: #ffffff40;
+    background-color: var(--col-text);
+    color: var(--col-main);
 }
 
 nav {
     display: flex;
     position: fixed;
     align-items: center;
-    margin: 0;
-    width: 100%;
-    height: fit-content;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    padding: 20px;
     background-color: var(--col-accent);
-    overflow: hidden;
     z-index: 1;
-    box-shadow: 0 -6px 10px 5px rgba(0, 0, 0, 0.5);
 }
 
 .nav-img, .nav-elem {
     position: relative;
-    align-items: stretch;
     display: table-cell;
     float: left;
     overflow: hidden;
     font-size: large;
     margin-top: 0;
     margin-bottom: 0;
-    color: white;
 }
 
 .nav-img {
@@ -104,9 +120,13 @@ nav {
     float: right;
 }
 
+.nav-btn {
+    margin-right: 20px;
+}
+
 .nav-container {
     overflow: hidden;
-    width: 2000px;
+    width: 100vw; /* vw = viewport width */
 }
 
 .nav-filler {
@@ -117,15 +137,25 @@ nav {
 
 footer {
     position: fixed;
-    display: flexbox;
+    display: grid;
     left: 0;
     bottom: 0;
     width: 100%;
     text-align: center;
-    padding: .3cm;
+    padding: 10px;
+    margin-top: auto;
     background-color: var(--col-accent);
-    color: white;
-    box-shadow: 0 6px 10px 5px rgba(0, 0, 0, 0.5);
+    color: var(--col-text);
+    font-size: 25px;
+}
+
+#ig-icon {
+    height: 60px;
+    margin-right: 20px;
+}
+
+#mail-icon {
+    height: 60px;
 }
 
 #course-input {
