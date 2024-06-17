@@ -109,10 +109,11 @@ function getnextword() {
         translation: "",
         category: "",
     }
+    let id = localStorage.getItem("userID")
     fetch("localhost:8000/get_word", {
         method: "POST",
         body: JSON.stringify({
-            id: localStorage.getItem("userID")
+            id: id
         })
     })
     .then(response => {
