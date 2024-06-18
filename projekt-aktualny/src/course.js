@@ -8,22 +8,24 @@ const wordDisplayId = "course-word-display"
 const scoreCounterId = "course-score-counter"
 const statusId = "course-word-status"
 
-window.onload = () => {
-}
+// window.onload = () => {
+// }
 
 document.addEventListener('keydown', start, true)
 
 function start(event) {
     if (event.key == "Enter") {
         roundCounter = 0
-        words = Array.fromAsync(getwords(10)).then(arr => arr)
-        // words = [...getdebugwords()]
-        score = 0
-        numwords = words.length
-        updateword()
-        updatescore()
-        document.removeEventListener('keydown', start, true)
-        document.addEventListener('keydown', course, true)
+        getwords(10).then(arr => {
+            words = arr
+            // words = getdebugwords()
+            score = 0
+            numwords = words.length
+            updateword()
+            updatescore()
+            document.removeEventListener('keydown', start, true)
+            document.addEventListener('keydown', course, true)
+        })
     }
 }
 
@@ -87,20 +89,24 @@ function course(event) {
     document.getElementById(inputId).innerHTML = input
 }
 
-async function* getwords(numwords) {
+async function getwords(numwords) {
     let i = 0
+    let words = []
     while (i < numwords) {
-        yield await getnextword()
+        words.push(await getnextword())
         i += 1
     }
+    return words
 }
 
-function* getdebugwords() {
+function getdebugwords() {
     let i = 0
+    let words = []
     while (i < 8) {
-        yield generateRandomWord()
+        words.push(generateRandomWord())
         i += 1
     }
+    return words
 }
 
 async function getnextword() {
@@ -110,32 +116,22 @@ async function getnextword() {
         category: "",
     }
     let id = localStorage.getItem("userID")
-    const response = await fetch("localhost:8000/get_word", {
+    await fetch("localhost:8000/get_word", {
         method: "POST",
         body: JSON.stringify({
             id: id
         })
+    }).then(response => {
+        console.log(response)
+        return response.ok ? response.json() : null
+    }).then(json => {
+        if (json === null) {
+            console.log(json)
+            word.word = json.word
+            word.translation = json.translation
+            word.category = json.category
+        }
     })
-    console.log(response)
-    if (response.ok) {
-        var json = await response.json()
-        console.log(json)
-        word.word = json.word
-        word.translation = json.translation
-        word.category = json.category
-    }
-    
-    // .then(json => {
-    //     if (json === null) {
-    //         return
-    //     }
-    //     // alert(json)
-    //     // return
-        
-    // })
-    // .catch(err => {
-    //     alert(err)
-    // })
     return word
 }
 
@@ -181,5 +177,3 @@ function generateRandomWord() {
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
-
-
