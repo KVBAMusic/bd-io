@@ -10,14 +10,16 @@
 <body>
   <script src="src/login.js"></script>
     <div class="upper-page-part">
-      <img id="logo" src="./res/Lingsen.png" alt="Logo LingSen" height="82">
+      <a href="./index.html"><img id="logo" src="./res/Lingsen.png" alt="Logo LingSen" height="82"></a>
+      <div class="bts">
       <a href="./login.html"><button class="buttons">Zaloguj się</button></a>
       <a href="./register.html"><button class="buttons">Dołącz teraz!</button> </a>  
+     </div>
     </div>
 
     <div class="input-data">
         <h1>Załóż konto</h1>
-        <input type="text" type="hidden" placeholder="Imię" id="register-username">
+        <input type="text" type="hidden" placeholder="Nazwa użytkownika" id="register-username">
         <input type="email" placeholder="Adres e-mail" id="register-email">
         <input type="password" placeholder="Hasło" id="register-password">
         <select>
@@ -26,14 +28,14 @@
             <option>średniozaawansowany</option>
             <option>zaawansowany</option>
         </select>
-        <button id="confirm" onclick="register('register-username', 'register-email', 'register-password')">Potwierdź</button>
+      <button id="confirm" onclick="register('register-username', 'register-email', 'register-password')">Potwierdź</button>
     </div>   
 
     <div class="contact">
       <h3 id="contact-tittle">Kontakt</h3>
       <div class="inside-contact">
-        <a href="https://www.instagram.com/jacek_strojny/"><img  id="ig-icon" src="Projekt bez nazwy_preview_rev_1.png" alt=""></a>
-        <a href="mailto:siurek@gmail.com"><img id="mail-icon" src="Projekt bez nazwy-kopia_preview_rev_1.png"></a>
+        <a href="https://www.instagram.com/lingsen/"><img  id="ig-icon" src="Projekt bez nazwy_preview_rev_1.png" alt=""></a>
+        <a href="mailto:lingsen@gmail.com"><img id="mail-icon" src="Projekt bez nazwy-kopia_preview_rev_1.png"></a>
       </div>
     </div>
 

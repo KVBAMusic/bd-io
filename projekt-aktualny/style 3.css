@@ -144,6 +144,10 @@ select option[disabled] {
   color: #aaa; /* Kolor wstępnie wyświetlanej opcji */
 }
 
+.bts {
+  align-items: end;
+}
+
 /* Specjalne style dla Safari */
 @media not all and (min-resolution: 0.001dpcm) {
   @supports (-webkit-appearance: none) {
@@ -153,3 +157,4 @@ select option[disabled] {
     }
   }
 }
+
